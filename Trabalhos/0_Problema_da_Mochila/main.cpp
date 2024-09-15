@@ -5,9 +5,9 @@
 void insertion_sort_inverso(std::vector<std::tuple<int, int, int, int, double>>& vetor){
   std::size_t n = vetor.size();
   for (std::size_t i = 1; i < n; ++i) {
-    // Tupla Pivo
-    std::tuple<int, int, int, int, double> pivo = vetor[i];
-    double pivoValue = std::get<4>(pivo); // Obter valor double da Tupla
+    std::tuple<int, int, int, int, double> pivo = vetor[i];                 // Tupla Pivo
+
+    double pivoValue = std::get<4>(pivo);                                   // Obter valor double da Tupla Pivo
 
     int j = i - 1;
     while (j >= 0 and std::get<4>(vetor[j]) < pivoValue) {
@@ -83,6 +83,5 @@ int main(){
     }
     finalizado = true;
   }
-
   return 0;
 }
