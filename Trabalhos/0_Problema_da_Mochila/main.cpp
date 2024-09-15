@@ -71,9 +71,9 @@ int main(){
         }else{
           proximoItem=true;
         }
-          if (proximoItem || j == (dItem-1)){
+          if (proximoItem || j == (dItem-1)){                             // Verificar se o peso do Item estourou ou se acabaram suas unidades
             if(vezesInserido > 0){
-              std::cout << iItem << ' ' << vezesInserido << std::endl;
+              std::cout << iItem << ' ' << vezesInserido << std::endl;    // Print do indice do item a as unidades guardadas
             }
             break;
           }
