@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1726340774 source:/home/nascido/Repos/UFSC/Estrutura_de_Dados/Trabalhos/0_Problema_da_Mochila/main.cpp
+1726354950 source:/home/nascido/Repos/UFSC/Estrutura_de_Dados/Trabalhos/0_Problema_da_Mochila/main.cpp
 	<iostream>
 	<vector>
+	<tuple>
 
