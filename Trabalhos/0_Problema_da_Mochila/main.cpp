@@ -24,7 +24,7 @@ int main() {
   double relacao; // relacao de u/w
 
   std::vector<std::tuple<int, int, int, int, double>>
-      itensDisponiveis; // Vetor de Tuplas: Cada tupla representa um item
+    itensDisponiveis; // Vetor de Tuplas: Cada tupla representa um item
   std::tuple<int, int, int, int, double> item; // Tupla: Valores do Item
 
   std::cin >> u >> w >> d; // Leitura dos vavlores: utilidade, peso, quantidade
@@ -73,18 +73,15 @@ int main() {
         } else {
           proximoItem = true;
         }
-        if (proximoItem ||
-            j == (dItem - 1)) { // Verificar se o peso do Item estourou ou se
-                                // acabaram suas unidades
+        if (proximoItem || j == (dItem - 1)) { // Verificar se extrapolou o peso ou acabaram os itens
           if (vezesInserido > 0) {
-            std::cout
-                << iItem << ' ' << vezesInserido
-                << std::endl; // Print do indice do item a as unidades guardadas
+            std::cout << iItem << ' ' << vezesInserido << std::endl; // Print do indice do item a as unidades guardadas
           }
           break;
         }
-        if (wTotal == capacidade)
+        if (wTotal == capacidade){
           temEspaco = false;
+        }
       }
     }
     finalizado = true;
