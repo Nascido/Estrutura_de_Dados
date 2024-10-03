@@ -32,7 +32,7 @@ LinkedList::LinkedList(){
 
 Node* LinkedList::find(int x){
   auto pivot = head;
-  while (pivot != nullptr and pivot->value != x) {
+  while (pivot != nullptr and pivot->data != x) {
     pivot = pivot->next; 
   }
   return pivot;
@@ -40,7 +40,7 @@ Node* LinkedList::find(int x){
 
 void LinkedList::insert(std::size_t pos, int x){
   Node* new_node = new Node();
-  new_node->value = x;
+  new_node->data = x;
   new_node->next = nullptr;
 
   if (size() == 0) {
@@ -68,13 +68,13 @@ void LinkedList::remove(int x){
     return;
   }
   Node* to_remove = nullptr;
-  if (head->value == x) {
+  if (head->data == x) {
     to_remove = head;
     head = head->next;
   }
   else{
     auto pivot = head;
-    while (pivot->next != nullptr and pivot->next->value != x) {
+    while (pivot->next != nullptr and pivot->next->data != x) {
       pivot = pivot->next;
     }
     to_remove = pivot->next;
@@ -91,7 +91,7 @@ std::size_t LinkedList::size(){
   return _size;
 }
 
-LinkedList::clear(){
+void LinkedList::clear(){
   Node* to_delete = head;
   while (to_delete != nullptr) {
     auto aux = to_delete->next;
@@ -100,4 +100,8 @@ LinkedList::clear(){
   }
   head = nullptr;
   _size = 0;
+}
+
+LinkedList::~LinkedList(){
+  clear();
 }
