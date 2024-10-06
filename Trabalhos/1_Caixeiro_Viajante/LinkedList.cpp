@@ -99,23 +99,21 @@ void LinkedList::switcher(std::size_t pos){
     nodeProx->next = node;
     node->next = tmp;
     head = nodeProx;
-  }else if (j == 0) {
-    auto node = get_node(i);
-    auto nodeProx = get_node(0);
-    auto nodeAnt = get_node(i-1);
-    auto tmp = nodeProx->next;
-    nodeProx->next = nullptr;
-    node->next = tmp;
-    nodeAnt->next = nodeProx;
-    head = node;
-  }else {
+  }else{
     auto node = get_node(i);
     auto nodeProx = get_node(j);
     auto nodeAnt = get_node(i-1);
     auto tmp = nodeProx->next;
-    nodeProx->next = node;
+    
     node->next = tmp;
     nodeAnt->next = nodeProx;
+
+    if (j == 0){
+      head = node;
+      nodeProx->next = nullptr;
+    } else {
+      nodeProx->next = node;
+    }
   }
 }
 
